@@ -1,0 +1,129 @@
+/* styles.css */
+:root {
+    --bg-light: #f4f4f9;
+    --bg-dark: #1e1e2f;
+    --text-light: #1e1e2f;
+    --text-dark: #f4f4f9;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.5s, color 0.5s;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    overflow-x: hidden;
+  }
+  
+  body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  input {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin: 10px 5px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  svg {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    display: block;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+  }
+  
+  #chart {
+    text-align: center;
+  }
+  
+  /* Toggle switch style */
+.switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    z-index: 10;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 26px; width: 26px;
+    left: 4px; bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #007bff;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(26px);
+  }  
+  
+  .blob {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0,123,255,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .blob:nth-child(1) { top: 10%; left: 10%; }
+  .blob:nth-child(2) { bottom: 10%; right: 10%; animation-delay: 2s; }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+  

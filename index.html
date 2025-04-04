@@ -1,0 +1,37 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic SVG Chart Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="blob"></div>
+  <div class="blob"></div>
+  <label class="switch">
+    <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+    <span class="slider round"></span>
+  </label>
+  <div class="toggle-chart">
+    <label><input type="radio" name="chartType" value="bar" checked> Bar Chart</label>
+    <label><input type="radio" name="chartType" value="line"> Line Chart</label>
+  </div>  
+  <div class="container">
+    <h2>Enter Data to Generate SVG Bar Chart</h2>
+    <form id="dataForm">
+      <div id="inputs">
+        <div>
+          Label: <input type="text" name="label" required>
+          Value: <input type="number" name="value" required>
+        </div>
+      </div>
+      <button type="button" onclick="addInput()">Add More</button>
+      <button type="submit">Generate Chart</button>
+    </form>
+
+    <div id="chart"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
